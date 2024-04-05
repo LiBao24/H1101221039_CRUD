@@ -49,7 +49,7 @@
                                             <td>{{ $brand->address }}</td>
                                             <td>
                                                 <a href="{{ route('brands.edit', ['id' => $brand->id]) }}" class="btn btn-secondary btn-sm">edit</a>
-                                                <a href="#" class="btn btn-sm btn-danger" onclick=" event.preventDefault(); if (confirm('Do you want to remove this?')) {document.getElementById('delete-row-{{ $product->id }}').submit();}">
+                                                <a href="#" class="btn btn-sm btn-danger" onclick=" event.preventDefault(); if (confirm('Do you want to remove this?')) {document.getElementById('delete-row-{{ $brand->id }}').submit();}">
                                                     delete
                                                 </a>
                                                 <form id="delete-row-{{ $brand->id }}" action="{{ route('brands.destroy', ['id' => $brand->id]) }}" method="POST">

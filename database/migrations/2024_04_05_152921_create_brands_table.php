@@ -18,7 +18,7 @@ return new class extends Migration
             $table->id();
             $table->string('kode')->index();;
             $table->string('name');
-            $table->integer('phone')->lenght(15);
+            $table->integer('phone')->lenght(10);
             $table->string('address');
             $table->timestamps();
         });
