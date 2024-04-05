@@ -5,12 +5,12 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Http\RedirectResponse;
-use App\Http\Requests\StoreProductRequest;
-use App\Http\Requests\UpdateProductRequest;
-use App\Models\Product;
+use App\Http\Requests\StoreBrandRequest;
+use App\Http\Requests\UpdateBrandRequest;
+use App\Models\Brand;
 
 
-class ProductController extends Controller
+class BrandController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -19,8 +19,8 @@ class ProductController extends Controller
      */
     public function index(): Response
     {
-        $products = Product::all();
-        return response(view('welcome', ['products' => $products]));
+        $brands = Brand::all();
+        return response(view('welcome', ['brands' => $brands]));
     }
 
     /**
@@ -30,7 +30,7 @@ class ProductController extends Controller
      */
     public function create(): Response
     {
-        return response(view('products.create'));
+        return response(view('brands.create'));
     }
 
     /**
@@ -39,9 +39,9 @@ class ProductController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreProductRequest $request): RedirectResponse
+    public function store(StoreBrandRequest $request): RedirectResponse
     {
-        if (Product::create($request->validated())) {
+        if (Brand::create($request->validated())) {
             return redirect(route('index'))->with('success', 'Added!');
         }
     }
@@ -54,8 +54,8 @@ class ProductController extends Controller
      */
     public function edit(string $id): Response
     {
-        $product = Product::findOrFail($id);
-        return response(view('products.edit', ['product' => $product]));
+        $brand = Brand::findOrFail($id);
+        return response(view('brands.edit', ['brand' => $brand]));
     }
 
     /**
@@ -76,11 +76,11 @@ class ProductController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateProductRequest $request, string $id): RedirectResponse
+    public function update(UpdateBrandRequest $request, string $id): RedirectResponse
     {
-        $product = Product::findOrFail($id);
+        $brand = Brand::findOrFail($id);
 
-        if ($product->update($request->validated())) {
+        if ($brand->update($request->validated())) {
             return redirect(route('index'))->with('success', 'Updated!');
         }
     }
@@ -93,9 +93,9 @@ class ProductController extends Controller
      */
     public function destroy(string $id): RedirectResponse
     {
-        $product = Product::findOrFail($id);
+        $brand = Brand::findOrFail($id);
 
-        if ($product->delete()) {
+        if ($brand->delete()) {
             return redirect(route('welcome'))->with('success', 'Deleted!');
         }
 

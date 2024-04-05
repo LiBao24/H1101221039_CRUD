@@ -13,12 +13,12 @@
         <div class="main-wrapper">
             <div class="main-content">
                 <div class="container">
-                    <form method="post" action="{{ route('products.store') }}">
+                    <form method="post" action="{{ route('brands.store') }}">
 
                         @csrf
                         <div class="card mt-5">
                             <div class="card-header">
-                                <h3>New Product</h3>
+                                <h3>New Brand</h3>
                             </div>
                             <div class="card-body">
                                 @if ($errors->any())
@@ -44,19 +44,19 @@
                                     <input type="text" class="form-control" name="kode" value="{{ old('kode') }}" placeholder="#KODE">
                                 </div>
                                 <div class="mb-3">
-                                    <label class="form-label">Name</label>
+                                    <label class="form-label">Brand Name</label>
                                     <input type="text" class="form-control" name="name"
                                         value="{{ old('name') }}" placeholder="Name">
                                 </div>
                                 <div class="mb-3">
-                                    <label class="form-label">Price</label>
-                                    <input type="text" class="form-control" name="price"
-                                        value="{{ old('price') }}" placeholder="Price">
+                                    <label class="form-label">Phone Number</label>
+                                    <input type="text" class="form-control" name="phone"
+                                        value="{{ old('phone') }}" placeholder="Phone Number">
                                 </div>
                                 <div class="mb-3">
-                                    <label class="form-label">Stock</label>
-                                    <input type="text" class="form-control" name="stock"
-                                        value="{{ old('stock') }}" placeholder="Stock">
+                                    <label class="form-label">Address</label>
+                                    <input type="text" class="form-control" name="address"
+                                        value="{{ old('address') }}" placeholder="Address">
                                 </div>
                             </div>
                             <div class="card-footer">
