@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Halaman Edit Brand</title>
+    <title>Halaman Edit Category</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
 </head>
 
@@ -13,13 +13,13 @@
         <div class="main-wrapper">
             <div class="main-content">
                 <div class="container">
-                    <form method="post" action="{{ route('brands.update', $brand->id) }}">
+                    <form method="post" action="{{ route('categories.update', $category->id) }}">
 
                         @method('PUT')
                         @csrf
                         <div class="card mt-5">
                             <div class="card-header">
-                                <h3>Edit Brand</h3>
+                                <h3>Edit Category</h3>
                             </div>
                             <div class="card-body">
                                 @if ($errors->any())
@@ -43,19 +43,15 @@
                                 @endif
                                 <div class="mb-3">
                                     <label class="form-label">KODE</label>
-                                    <input type="text" class="form-control" name="kode" value="{{ old('kode', $brand->kode) }}" placeholder="#KODE">
+                                    <input type="text" class="form-control" name="kode" value="{{ old('kode', $category->kode) }}" placeholder="#KODE">
                                 </div>
                                 <div class="mb-3">
-                                    <label class="form-label">Brand Name</label>
-                                    <input type="text" class="form-control" name="name" value="{{ old('name', $brand->name) }}" placeholder="Name">
-                                </div>
-                                <div class="mb-3">
-                                    <label class="form-label">Phone</label>
-                                    <input type="text" class="form-control" name="phone" value="{{ old('phone', $brand->phone) }}" placeholder="Phone">
+                                    <label class="form-label">Category Name</label>
+                                    <input type="text" class="form-control" name="name" value="{{ old('name', $category->name) }}" placeholder="Name">
                                 </div>
                                 <div class="mb-3">
                                     <label class="form-label">Address</label>
-                                    <input type="text" class="form-control" name="address" value="{{ old('address', $brand->address) }}" placeholder="Address">
+                                    <input type="text" class="form-control" name="address" value="{{ old('address', $category->address) }}" placeholder="Address">
                                 </div>
                             </div>
                             <div class="card-footer">
