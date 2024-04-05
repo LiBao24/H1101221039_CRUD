@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rule;
 
 class UpdateBrandRequest extends FormRequest
 {
@@ -13,7 +14,7 @@ class UpdateBrandRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +25,14 @@ class UpdateBrandRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'kode' => [
+                'required',
+                'max:100',
+                Rule::unique('brands')->ignore($this->id),
+            ],
+            'name' => ['required', 'max:100'],
+            'phone' => ['required', 'numeric', 'min:10'],
+            'address' => ['required', 'max:100'],
         ];
     }
 }

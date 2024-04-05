@@ -13,7 +13,7 @@ class StoreBrandRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,10 @@ class StoreBrandRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'kode' => ['required', 'unique:brands', 'max:100'],
+            'name' => ['required', 'max:100'],
+            'phone' => ['required', 'numeric', 'min:10'],
+            'address' => ['required', 'max:100'],
         ];
     }
 }
