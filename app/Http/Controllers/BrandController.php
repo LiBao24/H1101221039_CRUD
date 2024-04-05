@@ -20,7 +20,7 @@ class BrandController extends Controller
     public function index(): Response
     {
         $brands = Brand::all();
-        return response(view('welcome', ['brands' => $brands]));
+        return response(view('brand', ['brands' => $brands]));
     }
 
     /**
