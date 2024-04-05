@@ -11,7 +11,7 @@ Route::get('products/{id}/edit', [ProductController::class, 'edit'])->name('prod
 Route::put('products/{id}', [ProductController::class, 'update'])->name('products.update');
 Route::delete('products/{id}', [ProductController::class,'destroy'])->name('products.destroy');
 
-Route::get('/brands', [BrandController::class, 'index'])->name('index');
+Route::get('/brand', [BrandController::class, 'index'])->name('index');
 Route::get('brands/create', [BrandController::class,'create'])->name('brands.create');
 Route::post('brands', [BrandController::class, 'store'])->name('brands.store');
 Route::get('brands/{id}/edit', [BrandController::class, 'edit'])->name('brands.edit');
