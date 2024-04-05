@@ -14,9 +14,6 @@
         <div class="main-wrapper">
             <div class="main-content">
                 <div class="container">
-                    <div>
-                        <p><a class="btn btn-primary" href="{{ route('/brand') }}">Brand</a></p>
-                    </div>
                     <div class="card mt-5">
                         <div class="card-header">
                             <h3>List Product</h3>
