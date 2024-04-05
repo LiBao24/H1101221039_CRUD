@@ -31,7 +31,7 @@ class UpdateBrandRequest extends FormRequest
                 Rule::unique('brands')->ignore($this->id),
             ],
             'name' => ['required', 'max:100'],
-            'phone' => ['required', 'numeric', 'min:10'],
+            'phone' => ['required', 'numeric'],
             'address' => ['required', 'max:100'],
         ];
     }
