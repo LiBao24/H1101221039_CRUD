@@ -50,8 +50,8 @@
                                     <input type="text" class="form-control" name="name" value="{{ old('name', $category->name) }}" placeholder="Name">
                                 </div>
                                 <div class="mb-3">
-                                    <label class="form-label">Address</label>
-                                    <input type="text" class="form-control" name="address" value="{{ old('address', $category->address) }}" placeholder="Address">
+                                    <label class="form-label">Description</label>
+                                    <input type="text" class="form-control" name="description" value="{{ old('description', $category->description) }}" placeholder="Description">
                                 </div>
                             </div>
                             <div class="card-footer">
